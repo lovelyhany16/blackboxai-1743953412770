@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaboration Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="scripts/chat.js" defer></script>
+    <script src="scripts/videoCall.js" defer></script>
+</head>
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div class="w-64 bg-white shadow-md">
+            <div class="p-4 border-b">
+                <h2 class="text-xl font-semibold text-gray-800">
+                    <i class="fas fa-users mr-2 text-blue-500"></i>Teams
+                </h2>
+            </div>
+            <div class="p-4">
+                <div class="mb-4">
+                    <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-2">Departments</h3>
+                    <ul>
+                        <li class="mb-1">
+                            <a href="#" class="flex items-center px-2 py-1 text-sm rounded hover:bg-gray-100 text-blue-600">
+                                <i class="fas fa-warehouse mr-2"></i>Warehouse
+                            </a>
+                        </li>
+                        <li class="mb-1">
+                            <a href="#" class="flex items-center px-2 py-1 text-sm rounded hover:bg-gray-100 text-gray-700">
+                                <i class="fas fa-shopping-cart mr-2"></i>Procurement
+                            </a>
+                        </li>
+                        <li class="mb-1">
+                            <a href="#" class="flex items-center px-2 py-1 text-sm rounded hover:bg-gray-100 text-gray-700">
+                                <i class="fas fa-chart-line mr-2"></i>Analytics
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-2">Projects</h3>
+                    <ul>
+                        <li class="mb-1">
+                            <a href="#" class="flex items-center px-2 py-1 text-sm rounded hover:bg-gray-100 text-gray-700">
+                                <span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span>
+                                Q2 Inventory Audit
+                            </a>
+                        </li>
+                        <li class="mb-1">
+                            <a href="#" class="flex items-center px-2 py-1 text-sm rounded hover:bg-gray-100 text-gray-700">
+                                <span class="w-2 h-2 rounded-full bg-yellow-500 mr-2"></span>
+                                Supplier Negotiations
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+            <!-- Video Call Section -->
+            <div class="bg-white p-4 border-b">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-xl font-semibold text-gray-800">
+                        <i class="fas fa-video mr-2 text-blue-500"></i>Team Meeting
+                    </h2>
+                    <div class="flex space-x-2">
+                        <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-lg text-sm">
+                            <i class="fas fa-user-plus mr-1"></i>Invite
+                        </button>
+                        <button class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-lg text-sm">
+                            <i class="fas fa-share-square mr-1"></i>Share Screen
+                        </button>
+                    </div>
+                </div>
+                <div id="video-container" class="mt-4 grid grid-cols-2 gap-4">
+                    <!-- Video feeds will be inserted here -->
+                    <div class="bg-gray-200 rounded-lg aspect-video flex items-center justify-center">
+                        <i class="fas fa-user text-4xl text-gray-400"></i>
+                    </div>
+                    <div class="bg-gray-200 rounded-lg aspect-video flex items-center justify-center">
+                        <i class="fas fa-user text-4xl text-gray-400"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Section -->
+            <div class="flex-1 flex">
+                <div class="flex-1 p-4 overflow-y-auto">
+                    <div class="space-y-4">
+                        <!-- Sample messages -->
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
+                                <i class="fas fa-user text-blue-500"></i>
+                            </div>
+                            <div class="ml-3">
+                                <div class="text-sm font-medium text-gray-900">John Doe</div>
+                                <div class="mt-1 text-sm text-gray-700 bg-white p-3 rounded-lg shadow-sm max-w-xs">
+                                    Has anyone checked the warehouse inventory levels?
+                                </div>
+                                <div class="mt-1 text-xs text-gray-500">10:30 AM</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start justify-end">
+                            <div class="ml-3 text-right">
+                                <div class="text-sm font-medium text-gray-900">You</div>
+                                <div class="mt-1 text-sm text-white bg-blue-500 p-3 rounded-lg shadow-sm max-w-xs inline-block">
+                                    I'll check them now and update the system.
+                                </div>
+                                <div class="mt-1 text-xs text-gray-500">10:32 AM</div>
+                            </div>
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center">
+                                <i class="fas fa-user text-green-500"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-80 border-l bg-white p-4">
+                    <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">Participants (3)</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <div class="flex-shrink-0 h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center mr-2">
+                                <i class="fas fa-user text-blue-500 text-sm"></i>
+                            </div>
+                            <span class="text-sm font-medium">John Doe</span>
+                            <span class="ml-auto w-2 h-2 rounded-full bg-green-500"></span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="flex-shrink-0 h-8 w-8 rounded-full bg-green-100 flex items-center justify-center mr-2">
+                                <i class="fas fa-user text-green-500 text-sm"></i>
+                            </div>
+                            <span class="text-sm font-medium">You</span>
+                            <span class="ml-auto w-2 h-2 rounded-full bg-green-500"></span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="flex-shrink-0 h-8 w-8 rounded-full bg-purple-100 flex items-center justify-center mr-2">
+                                <i class="fas fa-user text-purple-500 text-sm"></i>
+                            </div>
+                            <span class="text-sm font-medium">Sarah Smith</span>
+                            <span class="ml-auto w-2 h-2 rounded-full bg-gray-300"></span>
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">Tasks</h3>
+                        <div class="space-y-2">
+                            <div class="flex items-start">
+                                <input type="checkbox" class="mt-1 mr-2">
+                                <span class="text-sm">Update inventory levels</span>
+                            </div>
+                            <div class="flex items-start">
+                                <input type="checkbox" class="mt-1 mr-2">
+                                <span class="text-sm">Contact supplier about delay</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Message Input -->
+            <div class="p-4 border-t bg-white">
+                <div class="flex items-center">
+                    <input type="text" placeholder="Type a message..." 
+                           class="flex-1 border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <button class="ml-2 bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-lg">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
